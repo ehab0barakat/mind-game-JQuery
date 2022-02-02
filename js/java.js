@@ -78,5 +78,5 @@ setTimeout(function(){
 }, 1000)
     y=0 ;
 }})
-$(".refresh").on("click", function(){location.reload()})
+$(".refresh").on("click", function(){location.href = `https://distracted-kowalevski-6355c4.netlify.app/`})
 
