@@ -22,7 +22,10 @@ let sec = 0
         $(".timer span span ").text( time);
         sec == 0 ? min-- : ""
         sec == 0 ? sec = 59 : sec--
-        min == -1 ? clearInterval(timer) :""
+        if( min == -1 ){
+            clearInterval(timer)
+            alert("you lost the game")
+        }
     },1000)
 
 }
