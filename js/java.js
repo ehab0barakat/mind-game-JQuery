@@ -11,6 +11,23 @@
     9 : "https://c4.wallpaperflare.com/wallpaper/1017/584/846/avengers-age-of-ultron-the-avengers-thor-hulk-wallpaper-preview.jpg",
     10 : "https://c4.wallpaperflare.com/wallpaper/266/615/627/movies-deadpool-superhero-wallpaper-preview.jpg"  
 }
+
+
+function timer(){
+
+let min = 3
+let sec = 0
+    timer = setInterval(()=>{
+        let time = `${min}:${sec.toString().length  ===  2 ? sec : "0"+sec }`
+        $(".timer span span ").text( time);
+        sec == 0 ? min-- : ""
+        sec == 0 ? sec = 59 : sec--
+        min == -1 ? clearInterval(timer) :""
+    },1000)
+
+}
+
+
 function play(x){ w =document.querySelector(`${x}`).play() }
 function pause(x){ w =document.querySelector(`${x}`).pause() }
 f=0
@@ -20,6 +37,7 @@ $("button").on("click" , function(x){
     play(".game")
     $(".landing").slideUp(500) 
     x= Number.parseInt( $("select").val()) ; // number of elements gonna be
+    timer()
     n=0
     for (i=0 ; i<x ; i++ ){
         n>=(x/2)? n=1 :n++ ; // number looping in object images
@@ -81,16 +99,6 @@ setTimeout(function(){
 $(".refresh").on("click", function(){location.href = `https://distracted-kowalevski-6355c4.netlify.app/`})
 
 
-
-let min = 3
-let sec = 0
-    timer = setInterval(()=>{
-        let time = `${min}:${sec.toString().length  ===  2 ? sec : "0"+sec }`
-        $(".timer span span ").text( time);
-        sec == 0 ? min-- : ""
-        sec == 0 ? sec = 59 : sec--
-        min == -1 ? clearInterval(timer) :""
-    },1000)
 
 
 
